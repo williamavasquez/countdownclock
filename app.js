@@ -2,36 +2,33 @@ var clock;
 
 $(document).ready(function() {
     
+    const timeRemaining =  () => {
+        // ajax call for remaining time
+        $.ajax({
+            type: "GET",
+            url: "/remainingTime",
+            success: (data)=>{
+              console.log(data)
+            }
+          });
+        // return time 
+        }
 
-    clock = $('.clock').FlipClock(3, {
+        timeRemaining();
+    let time = 30
+
+    clock = $('.clock').FlipClock(time, {
         // clockFace: 'MinuteCounter',
         countdown: true,
         autoStart: true,
         callbacks: {
-            reset: ()=>{
-                console.log("hello")
-            },
             stop: ()=>{
-clock.setTime(10)
-clock.start();
+            clock.setTime(time)
+            clock.start();
             },
             start: function() {
                 $('.message').html('The clock has started!');
             }
         }
     });
-
-
-    var testthis = ()=>{
-        console.log(clock.running)
-        // console.log("stop")
-        // clock.start()
-
-        clock.loadClockFace()
-    }
-    $('.start').click(function(e) {
-
-        clock.start();
-    });
-
 });
