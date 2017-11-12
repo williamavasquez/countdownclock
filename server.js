@@ -20,9 +20,15 @@ function startTimer(duration) {
 
 //Cmin is how many minutes to coutdown (should be in minutes)
 
-var Cmin = 1;
+var Cmin = 60;
 var Cseconds = Cmin * 60
 startTimer(Cseconds);
+
+app.all('/', function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+  next();
+ });
 
 
 app.get("/", function(req, res) {
