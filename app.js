@@ -1,9 +1,6 @@
 var clock;
 
 $(document).ready(function() {
-    
-    $.get('http://localhost:3000/remainingTime',function(data){console.log(data)})
-
 
     const timeRemaining =  () => {
         console.log("fetching time Remaining")
