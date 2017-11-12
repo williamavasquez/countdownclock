@@ -1,0 +1,10 @@
+have some html that shows a clock
+we take in a value (hours)
+convert to minutes 
+Display the timer - front end 
+reduce the time by seconds 
+altering the html to show the clock ticking down 
+when submiting there should be a check between backend timer and front to make sure no alterations were made
+route should return if this comparison is true or not
+the clock needs to restart itself once the timer is over 
+route that creates a new clock with a new countdown 
