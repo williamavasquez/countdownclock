@@ -3,7 +3,7 @@
 var express = require("express");
 
 var app = express();
-var PORT = 3000;
+var port = process.env.PORT || 3000;
 
 var Timeremaining
 
@@ -11,7 +11,7 @@ function startTimer(duration) {
   var timer = duration, minutes, seconds;
   setInterval(function () {
     Timeremaining = timer
-    
+
       if (--timer < 0) {
           timer = duration;
       }
