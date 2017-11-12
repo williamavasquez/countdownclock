@@ -24,6 +24,11 @@ var Cmin = 1;
 var Cseconds = Cmin * 60
 startTimer(Cseconds);
 
+
+app.get("/", function(req, res) {
+  res.send("Home!")
+});
+
 // Routes
 // ===========================================================
 app.get("/remainingTime", function(req, res) {
