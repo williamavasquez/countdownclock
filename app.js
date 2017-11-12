@@ -2,22 +2,7 @@ var clock;
 
 $(document).ready(function() {
 
-    const timeRemaining =  () => {
-        console.log("fetching time Remaining")
-        // ajax call for remaining time
-        $.ajax({
-            type: "GET",
-            url: "https://countdownclockserver.herokuapp.com/remainingTime",
-            success: (data)=>{
-              console.log(data)
-              clock.set(data.timeLeft)
-              clock.start()
-            }
-          });
-        }
-
-    timeRemaining()
-        var time;
+   var time;
 
     clock = $('.clock').FlipClock(time, {
         // clockFace: 'MinuteCounter',
@@ -33,4 +18,21 @@ $(document).ready(function() {
             }
         }
     });
+
+    const timeRemaining =  () => {
+        console.log("fetching time Remaining")
+        // ajax call for remaining time
+        $.ajax({
+            type: "GET",
+            url: "https://countdownclockserver.herokuapp.com/remainingTime",
+            success: (data)=>{
+              console.log(data)
+              console.log(clock)
+              clock.setTime(data.timeLeft)
+              clock.start()
+            }
+          });
+        }
+
+    timeRemaining()
 });
